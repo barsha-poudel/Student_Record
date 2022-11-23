@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.main-container {
+    width: 100%;
+    background-color: aqua;
+}
