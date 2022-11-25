@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Students from '../TableComp/Students';
 import { Fragment } from 'react';
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 
 
@@ -15,6 +16,7 @@ const TableComponent =()=>{
         setStudents(index)
         console.log(student)
     }
+
     return(
         <>
         <Fragment>
@@ -47,7 +49,9 @@ const TableComponent =()=>{
                                             {student.Address}
                                         </td>
                                         <td>
+                                            <Link to={'/edit'}>
                                             <Button onClick={()=>alert(student.id)}>Edit</Button>
+                                            </Link>
                                             &nbsp;
                                             <Button onClick={()=>handleDelete(student.id)}>Delete</Button>
                                         </td>
@@ -60,6 +64,11 @@ const TableComponent =()=>{
                     </tbody>
 
                 </Table>
+                <br>
+                </br>
+                <Link className= "d-grid gap-2" to='/create'>
+                    <Button size='lg'>Create</Button>
+                </Link>
 
             </div>
         </Fragment>
