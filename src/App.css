@@ -59,8 +59,16 @@ h3{
 }
 svg {
   position: absolute;
-  top: 50%;
+  
+}
+i {
+  position: absolute;
+  top: 48%;
   transform: translateY(-50%);
-  right: 0;
+  right: 70px;
   height: 18px;
+}
+i:hover {
+  color: #00fcb6;
+  cursor: pointer;
 }
