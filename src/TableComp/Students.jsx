@@ -1,41 +1,41 @@
 const Students = [
     {
-        Id: "1",
+        id: "1",
         Name: "Ram Bahadur Thapa",
         Address: "kathmandu",
     },
     {
-        Id: "2",
+        id: "2",
         Name: "Hari Bahadur Bishwokarma",
         Address: "Sunsari",
     },
     {
-        Id: "3",
+        id: "3",
         Name: "Goma Devi Adhikari",
         Address: "Jhapa",
     },
     {
-        Id: "4",
+        id: "4",
         Name: "Dhanmaya Shrestha",
         Address: "Dhangadi",
     },
     {
-        Id: "5",
+        id: "5",
         Name: "BinodLal Mishra",
         Address: "Saptari",
     },
     {
-        Id: "6",
+        id: "6",
         Name: "Raman Kumar Magar",
         Address: "Morang",
     },
     {
-        Id: "7",
+        id: "7",
         Name: "Binod Bahadur Singh",
         Address: "Bhaktapur",
     },
     {
-        Id: "8",
+        id: "8",
         Name: "Manohar ram Dhital",
         Address: "Lalitpur",
     },

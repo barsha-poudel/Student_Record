@@ -2,15 +2,19 @@ import {Button, Table} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Students from '../TableComp/Students';
 import { Fragment } from 'react';
+import { useState } from 'react';
+
+
 
 const TableComponent =()=>{
-    // const handleDelete = (Id) =>{
-    //     var index = Students.map(function(e){
-    //         return e.Id
-    //     }).indexOf(Id);
-
-    //     Students.splice(index, 1);
-    // }
+    const [student, setStudents] = useState(Students)
+    const handleDelete = (id) =>{
+        var index = student.filter(function(e){
+            return e.id !== id
+        })
+        setStudents(index)
+        console.log(student)
+    }
     return(
         <>
         <Fragment>
@@ -19,26 +23,23 @@ const TableComponent =()=>{
                     <thead>
                         <tr>
                             <th>
-                                ID
-                            </th>
-                            <th>
                                 Name
                             </th>
                             <th>
                                 Address
                             </th>
+                            <th>
+                                Action
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            Students && Students.length > 0
+                            student && student.length > 0
                             ?
-                            Students.map((student)=> {
+                            student.map((student, index)=> {
                                 return(
-                                    <tr>
-                                        <td>
-                                            {student.Id}
-                                        </td>
+                                    <tr key={index}>
                                         <td>
                                             {student.Name}
                                         </td>
@@ -46,9 +47,9 @@ const TableComponent =()=>{
                                             {student.Address}
                                         </td>
                                         <td>
-                                            <Button onClick={()=>alert(student.Id)}>Edit</Button>
+                                            <Button onClick={()=>alert(student.id)}>Edit</Button>
                                             &nbsp;
-                                            <Button onClick={()=>alert(student.Id)}>Delete</Button>
+                                            <Button onClick={()=>handleDelete(student.id)}>Delete</Button>
                                         </td>
                                     </tr>
                                 )
@@ -62,6 +63,7 @@ const TableComponent =()=>{
 
             </div>
         </Fragment>
+        
         </>
     )
 }

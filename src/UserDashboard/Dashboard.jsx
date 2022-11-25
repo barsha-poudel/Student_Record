@@ -6,19 +6,7 @@ import { useState } from 'react';
 import TableComponent from '../TableComp/TableComponents';
 
 const UserDashboard = () =>{
-    const [studentsData,setStudentsData] = useState([])
-    const getAllStudents =()=>{
-    //     fetch("http://127.0.0.1:8000/admin/api/student/",{
-    //     })
-    //    try{
-    //     const result = JSON.parse();
-    //     console.log(result);
-    //    }
-    //    catch(err){
-    //     console.log('Error:',err.message);
-    //    }
-
-     }
+  const [isDisplay, setIsDisplay] =useState(false)
     return(
         <>
         <div className='main-container'>
@@ -31,10 +19,11 @@ const UserDashboard = () =>{
       </Navbar>
     </Container>
         </div>
-        <Button variant="primary" size="lg" onClick={getAllStudents} >
+        <Button variant="primary" size="lg" onClick={()=>setIsDisplay(!isDisplay)} >
         Click Record
       </Button>
-      <TableComponent/>
+      {isDisplay && <TableComponent/> }
+   
       </>
     )
 }
