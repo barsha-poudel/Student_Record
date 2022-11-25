@@ -19,8 +19,8 @@ const UserDashboard = () =>{
       </Navbar>
     </Container>
         </div>
-        <Button variant="primary" size="lg" onClick={()=>setIsDisplay(!isDisplay)} >
-        Click Record
+        <Button className='create-btn' variant="primary" size="lg" onClick={()=>setIsDisplay(!isDisplay)} >
+        RECORD
       </Button>
       {isDisplay && <TableComponent/> }
    

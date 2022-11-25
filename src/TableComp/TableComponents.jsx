@@ -1,9 +1,10 @@
 import {Button, Table} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Students from '../TableComp/Students';
+import Students from './StudentsObj';
 import { Fragment } from 'react';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
+import './TableComponent.css';
 
 
 
@@ -20,8 +21,8 @@ const TableComponent =()=>{
     return(
         <>
         <Fragment>
-            <div style={{margin:"18rem"}}>
-                <Table striped bordered hover size='sm'>
+            <div className= "table-main">
+                <Table className="table-container" striped bordered hover size='sm'>
                     <thead>
                         <tr>
                             <th>
