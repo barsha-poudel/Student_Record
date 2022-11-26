@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
-
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -29,11 +28,10 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(checkValidation()){
+    if (checkValidation()) {
       localStorage.setItem("loginData", JSON.stringify(loginData));
       navigate("/userdashboard");
     }
-   
   };
 
   const checkValidation = () => {
@@ -41,23 +39,18 @@ const LoginForm = () => {
     let errors = { ...validation };
     if (!loginData.email) {
       errors.email = "email is required";
-      isValid = 0
-    }
-    else if (!/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(loginData.email)) {
-      errors.email = "you must enter the valid email";
-      isValid = 0
+      isValid = 0;
     }
     if (!loginData.password) {
       errors.password = "password is required";
-      isValid= 0
+      isValid = 0;
     }
     setValidation(errors);
-    return isValid
+    return isValid;
   };
-  const TogglePassword =()=>{
-    setPasswordShown(!passwordShown)
-  }
-
+  const TogglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   return (
     <>
@@ -74,7 +67,9 @@ const LoginForm = () => {
             placeholder="Enter email"
             onChange={handleChange}
           />
-          {validation.email &&<p style={{color:"red", fontSize: "13px"}}>{validation.email}</p>}
+          {validation.email && (
+            <p style={{ color: "red", fontSize: "13px" }}>{validation.email}</p>
+          )}
         </div>
         <div className="mb-3">
           <label className="password-label">Password</label>
@@ -88,8 +83,11 @@ const LoginForm = () => {
             onChange={handleChange}
           />
           <i onClick={TogglePassword}>{eye}</i>
-          {validation.password && <p style={{color:"red", fontSize: "13px"}}>{validation.password}</p>}
-          
+          {validation.password && (
+            <p style={{ color: "red", fontSize: "13px" }}>
+              {validation.password}
+            </p>
+          )}
         </div>
         <div className="mb-3">
           <div className="custom-control custom-checkbox">
