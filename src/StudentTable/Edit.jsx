@@ -56,7 +56,7 @@ function Edit() {
           <Button
             type="submit"
             onClick={(e) => handleSubmit(e)}
-            style={{ height: "40px", width: "100px", marginLeft: "200px" }}
+            style={{ height: "40px", width: "200px", marginLeft: "200px" }}
           >
             UPDATE
           </Button>

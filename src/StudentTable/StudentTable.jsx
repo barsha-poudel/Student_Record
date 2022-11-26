@@ -68,7 +68,7 @@ const TableComponent = () => {
           </Table>
           <br></br>
           <Link className="d-grid gap-2" to="/create">
-            <Button size="lg">Create</Button>
+            <Button size="lg" style={{height:"50px"}}>CREATE</Button>
           </Link>
         </div>
       </Fragment>

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Login/Login.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from "./Login/LoginForm";
